@@ -13,7 +13,7 @@
             </div>
             <div class="form-group form-row">
                 <label class="col-sm-2 col-form-label text-right">Telefone:</label>
-                <input type="text" class="form-control col-sm-8" name="telefone" id="telefone" value="<?php echo isset($contato->telefone) ? $contato->telefone : null; 
+                <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form-control col-sm-8" name="telefone" id="telefone" maxlength="9" value="<?php echo isset($contato->telefone) ? $contato->telefone : null; 
                 ?>" />
             </div>
             <div class="form-group form-row">
@@ -24,7 +24,6 @@
             <div class="card-footer">
                 <input type="hidden" name="id" id="id" value="<?php echo isset($contato->id) ? $contato->id : null; ?>" />
                 <button class="btn btn-success" type="submit">Salvar</button>
-                <button class="btn btn-secondary">Limpar</button>
                 <a class="btn btn-danger" href="?controller=ContatosController&method=listar">Cancelar</a>
            </div>
         </div>

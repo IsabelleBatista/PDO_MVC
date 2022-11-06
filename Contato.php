@@ -49,9 +49,6 @@ public function save()
     }
     return false;
 }
-/*
-
-*/
 
 //Trasnsforma os valores para sintaxe sql
 private function escapar($dados)
